@@ -2,7 +2,7 @@ package com.caseGenerator.CaseNumberGenerator.Entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Entity
 @Table (name = "case_data", schema = "public")
@@ -10,13 +10,15 @@ public class CaseData {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    @Column(name="id", nullable = false)
+    public Long id;
 
     @Column(name = "case_number", length = 3)
     public String caseNumber;
 
     @Column(name = "created_dtm")
-    public LocalDateTime createdDtm;
+    public ZonedDateTime createdDtm;
+
 
     public Long getId() {
         return id;
@@ -34,11 +36,11 @@ public class CaseData {
         this.caseNumber = caseNumber;
     }
 
-    public LocalDateTime getCreatedDtm() {
+    public ZonedDateTime getCreatedDtm() {
         return createdDtm;
     }
 
-    public void setCreatedDtm(LocalDateTime createdDtm) {
+    public void setCreatedDtm(ZonedDateTime createdDtm) {
         this.createdDtm = createdDtm;
     }
 

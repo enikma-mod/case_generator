@@ -9,6 +9,7 @@ public class CaseSequence {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name="id", nullable = false)
     private Long id;
 
     @Column(name="branch_code")
@@ -16,6 +17,9 @@ public class CaseSequence {
 
     @Column(name = "sequence_number")
     private Integer sequenceNumber;
+
+    @Column(name = "case_key", length = 50)
+    private String caseKey;
 
     public Long getId() {
         return id;
@@ -39,5 +43,13 @@ public class CaseSequence {
 
     public void setSequenceNumber(Integer sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
+    }
+
+    public String getCaseKey() {
+        return caseKey;
+    }
+
+    public void setCaseKey(String caseKey) {
+        this.caseKey = caseKey;
     }
 }

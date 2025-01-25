@@ -27,8 +27,5 @@ public class CaseSequenceController {
         }
     }
 
-    @GetMapping("/getAll")
-    public List<CaseSequence>  findAllValues() {
-        return caseGeneratorRepository.findAll();
-    }
+
 }

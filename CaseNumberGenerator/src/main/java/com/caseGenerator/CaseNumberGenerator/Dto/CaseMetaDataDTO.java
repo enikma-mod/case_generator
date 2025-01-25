@@ -1,16 +1,26 @@
 package com.caseGenerator.CaseNumberGenerator.Dto;
 
+import jakarta.persistence.Column;
+
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 public class CaseMetaDataDTO {
 
-    public String caseNumber;
-    public String branchCode;
-    private Integer sequenceNumber;
-    public LocalDateTime createdDtm;
+    @Column (name = "case_number")
+    private String caseNumber;
+
+    @Column (name = "created_dtm")
+    public ZonedDateTime createdDtm;
 
     public CaseMetaDataDTO() {
     }
+
+    public CaseMetaDataDTO(String caseNumber, ZonedDateTime createdDtm) {
+        this.caseNumber = caseNumber;
+        this.createdDtm = createdDtm;
+    }
+
 
     public String getCaseNumber() {
         return caseNumber;
@@ -20,27 +30,11 @@ public class CaseMetaDataDTO {
         this.caseNumber = caseNumber;
     }
 
-    public LocalDateTime getCreatedDtm() {
+    public ZonedDateTime getCreatedDtm() {
         return createdDtm;
     }
 
-    public void setCreatedDtm(LocalDateTime createdDtm) {
+    public void setCreatedDtm(ZonedDateTime createdDtm) {
         this.createdDtm = createdDtm;
-    }
-
-    public Integer getSequenceNumber() {
-        return sequenceNumber;
-    }
-
-    public void setSequenceNumber(Integer sequenceNumber) {
-        this.sequenceNumber = sequenceNumber;
-    }
-
-    public String getBranchCode() {
-        return branchCode;
-    }
-
-    public void setBranchCode(String branchCode) {
-        this.branchCode = branchCode;
     }
 }
