@@ -5,10 +5,9 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="case_sequence", schema="public")
-public class CaseGenerator {
+public class CaseSequence {
 
     @Id
-    @Column(name="id")
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
